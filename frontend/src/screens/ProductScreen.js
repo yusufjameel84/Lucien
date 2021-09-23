@@ -24,7 +24,7 @@ const ProductScreen = ({ match }) => {
         <Col md={6}>
           <Image src={product.image} alt={product.name} fluid />
         </Col>
-        <Col md={3}>
+        <Col md={6}>
           <ListGroup variant="flush">
             <ListGroupItem>
               <h3>{product.name}</h3>
@@ -39,6 +39,37 @@ const ProductScreen = ({ match }) => {
 
             <ListGroupItem>Descrption: {product.description}</ListGroupItem>
           </ListGroup>
+          <Col md={12} className="block">
+            <Card>
+              <ListGroup variant="flush">
+                <ListGroupItem>
+                  <Row>
+                    <Col>Price:</Col>
+                    <Col>
+                      <strong>{product.price}</strong>
+                    </Col>
+                  </Row>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <Row>
+                    <Col>Status:</Col>
+                    <Col>
+                      {product.countInStock > 0 ? "In Stock" : "Out Of Stock"}
+                    </Col>
+                  </Row>
+                </ListGroupItem>
+                <ListGroupItem className="d-grid gap-2">
+                  <Button
+                    className="btn-outline-dark btn-primary "
+                    type="button"
+                    disabled={product.countInStock === 0}
+                  >
+                    Add to Cart
+                  </Button>
+                </ListGroupItem>
+              </ListGroup>
+            </Card>
+          </Col>
         </Col>
       </Row>
     </>
