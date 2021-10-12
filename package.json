@@ -1,0 +1,32 @@
+{
+  "name": "lucien",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": " nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufjameel84/Lucin.git"
+  },
+  "author": "Yusuf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yusufjameel84/Lucin/issues"
+  },
+  "homepage": "https://github.com/yusufjameel84/Lucin#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}
